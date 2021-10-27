@@ -9,6 +9,8 @@ import { UserServiceService } from '../services/user-service.service';
 })
 export class LoginComponent implements OnInit {
 
+  private token: String = "";
+
   // declare the form
   // Validating Form using Reactive form validation
   loginForm: FormGroup = new FormGroup({
@@ -33,8 +35,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(formInputs: any) {
     console.log(formInputs);
-    this.userService.login(formInputs).subscribe((result) => {
-      console.log(result);
+    this.userService.login(formInputs).subscribe((result: any) => {
+      this.token = result.token;
+      localStorage.setItem("token", this.token.toString());
     })
   }
 
