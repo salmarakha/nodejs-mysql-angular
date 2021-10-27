@@ -17,4 +17,8 @@ export class UserServiceService {
   getUserDetails(id: Number) {
     return this.http.get<{ user: User }>(`http://localhost:3000/users/${id}`);
   }
+
+  editUser(id: Number, user: any) {
+    return this.http.patch(`http://localhost:3000/users/${id}`, user);
+  }
 }

@@ -1,0 +1,79 @@
+<mat-card>
+  <br><br>
+  <h1 color="primary">Edit your data</h1>
+  <br>
+  <!-- Bind the form attribute to the form created in typescript -->
+  <form [formGroup]="editForm">
+
+    <mat-form-field>
+      <input matInput placeholder="Firstname" formControlName="firstname">
+      <br>
+      <small *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)" class="alert alert-danger">
+        <small *ngIf="firstname?.errors?.required" class="danger">
+          Firstname is required.
+        </small>
+      </small>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Lastname" formControlName="lastname">
+      <br>
+      <small *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)" class="alert alert-danger">
+        <small *ngIf="firstname?.errors?.required" class="danger">
+          Lastname is required.
+        </small>
+      </small>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" type="email">
+      <br>
+      <small *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+        <small *ngIf="email?.errors?.required" class="danger">
+          Email is required.
+        </small>
+        <small *ngIf="email?.errors?.email" class="danger">
+          Invalid email format.
+        </small>
+      </small>
+    </mat-form-field>
+
+    <br><br>
+
+    <mat-form-field>
+      <input matInput placeholder="Phone" formControlName="phone">
+      <br>
+      <small *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="alert alert-danger">
+        <small *ngIf="phone?.errors?.required" class="danger">
+          Phone is required.
+        </small>
+        <small *ngIf="phone?.errors?.maxlength" class="danger">
+          Maximum phone length is 11.
+        </small>
+      </small>
+    </mat-form-field>
+
+    <br><br>
+
+    <mat-form-field>
+      <input matInput placeholder="Date Of Birth" formControlName="dob">
+      <br>
+      <small *ngIf="dob?.invalid && (dob?.dirty || dob?.touched)" class="alert alert-danger">
+        <small *ngIf="dob?.errors?.required" class="danger">
+          Date of birth is required.
+        </small>
+      </small>
+    </mat-form-field>
+
+    <br><br>
+
+
+    <br>
+
+    <button mat-raised-button [disabled]="editForm.invalid" color="primary" type="submit"
+      (click)="onSubmit(editForm.value)">Save</button>
+
+    <br><br>
+  </form>
+</mat-card>
+

@@ -27,6 +27,6 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button><span id="edit-button">EDIT</span></button>
+    <a mat-button [routerLink]="['/edit', this.loggedUser?.id]"><span id="edit-button">EDIT</span></a>
   </mat-card-actions>
 </mat-card>
