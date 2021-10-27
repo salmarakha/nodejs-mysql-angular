@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(formInputs).subscribe((result: any) => {
       this.token = result.token;
       localStorage.setItem("token", this.token.toString());
+      localStorage.setItem("id", result.userId);
     })
   }
 
