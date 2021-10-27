@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { userAuthData } from '../models/userAuthData';
+import { User } from '../models/userModel';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +12,9 @@ export class UserServiceService {
 
   login(user: userAuthData) {
     return this.http.post("http://localhost:3000/users/login", user);
+  }
+
+  getUserDetails(id: Number) {
+    return this.http.get<{ user: User }>(`http://localhost:3000/users/${id}`);
   }
 }

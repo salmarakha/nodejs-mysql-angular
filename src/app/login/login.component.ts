@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate([`${result.userId}`]);
     },
     (error) => {
-      // email or password is probably incorrect (just a guess, errors should be handeled here)
+      // email or password is probably incorrect (just a guess; errors should be handeled here)
       this.invalidLogin = true;
     })
   }

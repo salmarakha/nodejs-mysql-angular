@@ -1,0 +1,32 @@
+mat-card {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 10%;
+}
+
+span {
+  margin-left: 10px;
+}
+
+#edit-button,
+mat-card-title {
+  color: #3f51b5;
+}
+
+/* mat-card-subtitle {
+  color: #ff4081;
+} */
+
+.header-image {
+  background-image: url('https://ae01.alicdn.com/kf/HTB1410hdzJTMKJjSZFPq6zHUFXac/10pcs-lot-Fashion-Small-Pet-Dogs-Cat-Sunglasses-Cool-Eye-wear-Protection-Pet-Glasses-Round-Frame.jpg_50x50.jpg_.webp');
+  background-size: cover;
+}
+
+div {
+  display: inline;
+}
+
+mat-icon {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
