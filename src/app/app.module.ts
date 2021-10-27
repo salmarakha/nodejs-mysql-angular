@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     LoginComponent,
     HeaderComponent,
     DisplayUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

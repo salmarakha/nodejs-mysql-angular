@@ -2,7 +2,8 @@
   <span>Hmmmm</span>
   <span class="spacer"></span>
   <ul>
-    <li><a mat-button routerLink="/">Login</a></li>
-    <li><a mat-button routerLink="/register">Register</a></li>
+    <li *ngIf="!token"><a mat-button routerLink="/">Login</a></li>
+    <li *ngIf="!token"><a mat-button routerLink="/register">Register</a></li>
+    <li *ngIf="!!token"><a mat-button (click)="logout()">Logout</a></li>
   </ul>
 </mat-toolbar>

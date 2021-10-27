@@ -21,4 +21,8 @@ export class UserServiceService {
   editUser(id: Number, user: any) {
     return this.http.patch(`http://localhost:3000/users/${id}`, user);
   }
+
+  registerUser(registeredData: any) {
+    return this.http.post("http://localhost:3000/users", registeredData);
+  }
 }
