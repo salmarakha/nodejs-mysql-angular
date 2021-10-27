@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserServiceService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   // declare the form
+  // Validating Form using Reactive form validation
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(null, [
       Validators.required,
@@ -23,12 +25,17 @@ export class LoginComponent implements OnInit {
   email = this.loginForm.get('email');
   password = this.loginForm.get('password');
 
-  // add the form builder service
-  constructor() { }
+  constructor(private userService: UserServiceService) { }
 
-  // create a data model for the form (Schema)
   ngOnInit(): void {
 
+  }
+
+  onSubmit(formInputs: any) {
+    console.log(formInputs);
+    this.userService.login(formInputs).subscribe((result) => {
+      console.log(result);
+    })
   }
 
 }
