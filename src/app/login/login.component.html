@@ -35,6 +35,12 @@
 
     <br><br>
 
+    <small *ngIf="invalidLogin" class="danger">
+      Invalid email or password.
+    </small>
+
+    <br>
+
     <button mat-raised-button [disabled]="loginForm.invalid" color="primary" type="submit"
       (click)="onSubmit(loginForm.value)">Login</button>
 
